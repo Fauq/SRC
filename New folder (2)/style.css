@@ -4,57 +4,65 @@
     font-family: sans-serif;
 }
 
-.banner{
+.header{
+    min-height: 100vh;
     width: 100%;
-    height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(image.jpg);
     background-size: cover;
     background-position: center;
+    position: relative;
 
 }
-.logo{
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
     width: 120px;
-    
-    cursor: pointer;
-
+    size: 50%; 
 }
-.navbar{
-    width: 85%;
+.nav-links{
+    flex: 1;
+    text-align: right;
+    /*width: 85%;
     margin: auto;
     padding: 35px 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;*/
 }
-.navbar ul li{
+.nav-links ul li{
     list-style: none;
-    display: inline-block;
-    margin: 0 20px;
+    display: inline-block; 
+    padding: 8px 12px;
     position: relative;
 }
-.navbar ul li a{
+.nav-links ul li a{
     text-decoration: none;
     color: #fff;
-    text-transform: uppercase;
+    font-size: 15px;
 }
-.navbar ul li::after{
+.nav-links ul li::after{
     content: '';
-    height: 3px;
-    width: 0;
+    height: 2px;
+    width: 0%;
     background: #428abd;
-    position: absolute;
-    left: 0;
-    bottom: -10;
+    display: block;
+    margin: auto;
     transition: 0.5s;
 }
-.navbar ul li:hover::after{
+.nav-links ul li:hover::after{
     width: 100%;
 }
 .content{
-    width: 100%;
+    width: 90%;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%,-50%);
     text-align: center;
     color: #fff;
 }
@@ -67,4 +75,40 @@
     font-weight: 100;
     line-height: 25px;
     font-size: 20px;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    margin-top: 12px;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solide #428abd;
+    background: #428abd;
+    transition: 1s;
+}
+
+@media(max-width: 700px){
+    .content h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #428abd;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        text-align: left;
+        z-index: 2;
+    }
 }
